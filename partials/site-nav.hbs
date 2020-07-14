@@ -1,0 +1,55 @@
+<nav class="mobile-nav">
+    <label for="toggle">&#9776;</label>
+    <input type="checkbox" id="toggle" />
+    <div class="mobile-nav-menu">
+        {{navigation}}
+        {{#if @member}}
+        <ul>
+            <li><a href="{{@site.url}}/account/">Account</a></li>
+            <li><a href="#signout" data-members-signout>Log out</a></li>
+        </ul>
+        {{else}}
+        <a class="signin-link" href="{{@site.url}}/signin/">Log in</a>
+        <a class="button primary small header-cta" href="{{@site.url}}/signup/">Subscribe</a>
+        {{/if}}
+    </div>
+</nav>
+<nav class="site-nav">
+    <div class="site-nav-left">
+        <div class="site-nav-left-content">
+            <a class="site-nav-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+            <div class="site-nav-content">
+                {{#if @site.navigation}}
+                    {{navigation}}
+                {{/if}}
+                {{#is "post"}}
+                    <span class="nav-post-title {{#unless @site.logo}}dash{{/unless}}">{{post.title}}</span>
+                {{/is}}
+            </div>
+        </div>
+    </div>
+    <div class="site-nav-right">
+        <button id="ss360-trigger" style="background-color: transparent;">{{> "icons/search"}}</button>
+        {{#if @member}}
+            <div class="account-menu">
+                <a href="javascript:" class="account-menu-avatar" id="account-menu" type="checkbox" name="menu">
+                    {{> "icons/avatar"}}
+                    {{#if @member.avatar_image}}
+                        <img src="{{@member.avatar_image}}" />
+                    {{/if}}
+                </a>
+                <ul class="account-menu-dropdown">
+                    <li class="account-info">
+                        <small>Signed in as</small>
+                        <span class="account-email" title="{{@member.email}}">{{@member.email}}</span>
+                    </li>
+                    <li><a href="{{@site.url}}/account/">Account</a></li>
+                    <li><a href="#signout" data-members-signout>Log out</a></li>
+                </ul>
+            </div>
+        {{else}}
+            <a class="signin-link" href="{{@site.url}}/signin/">Log in</a>
+            <a class="button primary small header-cta" href="{{@site.url}}/signup/">Subscribe</a>
+        {{/if}}
+    </div>
+</nav>
