@@ -3033,6 +3033,7 @@ textarea:focus {
 .button.secondary {
     background-color: var(--yellow);
     color: var(--black);
+    box-shadow: none;
 }
 
 .button.secondary:hover {
