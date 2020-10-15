@@ -1742,12 +1742,9 @@ Usage (In Ghost editor):
 /* 7.2. Members Subscribe Form
 /* ---------------------------------------------------------- */
 .subscribe-form {
-    margin: 1.5em 0;
-    padding: 6.5vw 7vw 8vw;
-    border: color(var(--lightgrey) l(+10%)) 1px solid;
+    padding: 0vw 2vw;
     text-align: center;
     background: linear-gradient(color(var(--whitegrey) l(+6%)), color(var(--whitegrey) l(+4%)));
-    border-radius: 3px;
 }
 
 .subscribe-form-title {
@@ -1813,12 +1810,7 @@ Usage (In Ghost editor):
     line-height: 39px;
     font-weight: 400;
     text-align: center;
-    background: linear-gradient(
-    color(var(--pink) whiteness(+7%)),
-    color(var(--pink) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--pink) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--pink) lightness(-4%) saturation(-10%))
-    );
+    background: color(var(--pink));
     border-radius: 5px;
 
     -webkit-font-smoothing: subpixel-antialiased;

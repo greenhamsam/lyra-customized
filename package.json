@@ -1,6 +1,6 @@
 {
-    "name": "lyra",
-    "description": "A premium publication theme for Ghost.",
+    "name": "lyra-sam",
+    "description": "A customized version of Ghost's Lyra theme.",
     "demo": "https://lyra.ghost.io",
     "version": "1.0.0",
     "engines": {

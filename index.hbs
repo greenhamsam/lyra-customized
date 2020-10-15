@@ -30,12 +30,29 @@ into the {body} of the default.hbs template --}}
                         <div class="feature-content">
                             <img src="assets/images/feature-4.png" />
                             <h3>Cat Photos</h3>
-                            <p>You're getting these whether you want them or not, sorry :)</p>
+                            <p>You'll be getting these whether you want them or not, sorry :)</p>
                         </div>                    
                     </div>
                     {{#if @member}}
                     {{else}}
-                        <a class="button primary" href="{{@site.url}}/signup/">Subscribe now</a>
+                    <div class="subscribe-form">
+                        <form data-members-form="subscribe">
+                            <div class="form-group">
+                                <input class="subscribe-email" data-members-email placeholder="email@example.com" autocomplete="false" type="email" required="false" />
+                                <button class="button primary" type="submit">
+                                    <span class="button-content">Subscribe</span>
+                                    <span class="button-loader">{{> "icons/loader"}}</span>
+                                </button>
+                                <div class="message-success">
+                                    <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+                                </div>
+                                <div class="message-error">
+                                    Please enter a valid email address!
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {{!-- <a class="button primary" href="{{@site.url}}/signup/">Subscribe now</a> --}}
                     {{/if}}
                 </div>
             </div>
