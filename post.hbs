@@ -131,7 +131,23 @@ into the {body} of the default.hbs template --}}
                             <div>
                                 <h1>Unlock this story</h1>
                                 <p>Sign up now to read the full story, and everything else on the site. You'll also get access to the weekly newsletter and new stories published whenever Sam can get her shit together.</p> 
-                                <a class="button large primary" href="/signup/">Subscribe now</a>
+                                <div class="subscribe-form">
+                                    <form data-members-form="subscribe">
+                                        <div class="form-group">
+                                            <input class="subscribe-email" data-members-email placeholder="email@example.com" autocomplete="false" type="email" required="false" />
+                                            <button class="button primary" type="submit">
+                                                <span class="button-content">Sign up</span>
+                                                <span class="button-loader">{{> "icons/loader"}}</span>
+                                            </button>
+                                            <div class="message-success">
+                                                <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+                                            </div>
+                                            <div class="message-error">
+                                                Please enter a valid email address!
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                                 <p><small>Already have an account? <a href="/signin/">Sign in</a></small></p>
                                 </div>
                             <div>
@@ -154,6 +170,11 @@ into the {body} of the default.hbs template --}}
     </div>
 </main>
 
+<div class="support">
+    <h2>Like my work? Please support me.</h2>
+    <a class="button primary small header-cta" href="{{@site.url}}/signup/">Become a member</a>
+</div>
+
 {{!-- Links to Previous/Next posts --}}
 <aside class="read-next outer">
     <div class="inner">
@@ -162,11 +183,11 @@ into the {body} of the default.hbs template --}}
             {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
                 <article class="read-next-card">
-                    <header class="read-next-card-header">
+                    {{!-- <header class="read-next-card-header">
                         {{#../primary_tag}}
                         <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
                         {{/../primary_tag}}
-                    </header>
+                    </header> --}}
                     <div class="read-next-card-content">
                         <ul>
                             {{#foreach related_posts}}

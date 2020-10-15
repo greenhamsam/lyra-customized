@@ -18,6 +18,7 @@ production stylesheet in assets/built/screen.css
   7.3. Comments
   7.4. Related Posts
   7.5. Koenig Styles
+  7.6. Support
 8.  Author Template
 9.  Error Template
 10. Subscribe Overlay
@@ -2392,6 +2393,14 @@ Usage (In Ghost editor):
     .kg-bookmark-content {
         order: 2;
     }
+}
+
+/* 7.6. Support me
+/* ---------------------------------------------------------- */
+
+.support {
+    margin-bottom: 50px;
+    text-align: center;
 }
 
 /* 8. Author Template
